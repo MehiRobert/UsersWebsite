@@ -1,0 +1,45 @@
+
+<style>
+  *{margin: 0; padding: 0;}
+  body{background: coral;}
+  .form-group{ width: 320px; background: coral; padding: 40px 20px; box-sizing: border-box; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+  h3{text-align: center; color: black; font-weight: normal; margin-bottom: 20px;}
+
+  input{width: 100%; background: none; border: 1px solid #fff; border-radius: 3px; padding: 6px 15px; box-sizing: border-box; margin-bottom: 20px; font-size: 16px; color: black;}
+
+  input[type="button"]{ background: #bac675; border: 0; cursor: pointer; color: black;}
+  input[type="button"]:hover{ background: #a4b15c; transition: .6s;}
+
+  ::placeholder{color: coral;}
+</style>
+<body>
+<div [hidden]="submitted" style="width: 400px;">
+  <form #addForm="ngForm" (ngSubmit)="onSubmit($event);resetForm(addForm)" >
+    <div class="form-group">
+      <h3>Add a Basic User</h3>
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="User.name" name="name">
+
+
+
+      <label for="mail">Mail</label>
+      <input type="text" class="form-control" id="mail" required [(ngModel)]="User.mail" name="mail">
+
+
+
+      <label for="password">Password</label>
+      <input type="text" class="form-control" id="password" required [(ngModel)]="User.password" name="password">
+
+
+
+
+      <label for="country">Country</label>
+      <input type="text" class="form-control" id="country" required [(ngModel)]="User.country" name="country">
+
+
+    <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+</body>
+
